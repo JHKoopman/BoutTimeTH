@@ -174,17 +174,26 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-zJ-UJR">
-                                <rect key="frame" x="115" y="551" width="145" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-zJ-UJR">
+                                <rect key="frame" x="-37.5" y="551" width="450" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="Pdq-Nq-BQg"/>
                                     <constraint firstAttribute="height" constant="52" id="sfG-cu-wlg"/>
                                 </constraints>
                                 <state key="normal" image="play_again"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pbm-PI-Qxp"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qey-8q-IcH">
+                                <rect key="frame" x="25" y="136" width="325" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.21002846959999999" green="0.58221989870000002" blue="0.73248153920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1617269516" blue="0.29461014270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qey-8q-IcH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="19O-ec-De3"/>
                             <constraint firstItem="SIx-eQ-ZtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ny-AC-0kX"/>
                             <constraint firstItem="xyH-7C-sS4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="4sP-np-K4E"/>
                             <constraint firstItem="cLr-RR-esz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="6HD-EG-82T"/>
@@ -196,6 +205,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xyH-7C-sS4" secondAttribute="trailing" constant="9" id="K3l-EZ-ziJ"/>
                             <constraint firstItem="SIx-eQ-ZtA" firstAttribute="top" secondItem="pgK-8p-7yH" secondAttribute="bottom" constant="36" id="MJf-Dc-TdP"/>
                             <constraint firstItem="bv6-go-RJ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MmR-Ml-gaw"/>
+                            <constraint firstItem="qey-8q-IcH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="Mz3-ib-7Bc"/>
                             <constraint firstItem="xyH-7C-sS4" firstAttribute="width" secondItem="SIx-eQ-ZtA" secondAttribute="width" id="OUR-ti-upI"/>
                             <constraint firstItem="cLr-RR-esz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QWc-UF-fDw"/>
                             <constraint firstItem="xyH-7C-sS4" firstAttribute="top" secondItem="SIx-eQ-ZtA" secondAttribute="bottom" constant="36" id="SUX-fX-hkr"/>
@@ -206,6 +216,7 @@
                             <constraint firstItem="xyH-7C-sS4" firstAttribute="height" secondItem="SIx-eQ-ZtA" secondAttribute="height" id="doM-Lc-cbq"/>
                             <constraint firstItem="bv6-go-RJ7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="gpe-c2-mfG"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bv6-go-RJ7" secondAttribute="trailing" constant="9" id="hoo-S0-0hT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qey-8q-IcH" secondAttribute="trailing" constant="9" id="mqn-ZY-mab"/>
                             <constraint firstItem="UwM-zJ-UJR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oAK-q0-k79"/>
                             <constraint firstItem="pgK-8p-7yH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oko-9p-VOO"/>
                             <constraint firstItem="bv6-go-RJ7" firstAttribute="top" secondItem="TLP-f3-Qa9" secondAttribute="bottom" constant="15" id="pKF-fm-0eD"/>
@@ -220,6 +231,7 @@
                         <outlet property="firstOption" destination="CSc-IM-MkG" id="Mgx-8w-4OO"/>
                         <outlet property="fourthOption" destination="nqZ-6X-MKA" id="JfN-e3-r8Q"/>
                         <outlet property="playAgainButton" destination="UwM-zJ-UJR" id="Dj5-0F-jss"/>
+                        <outlet property="scoreLabel" destination="qey-8q-IcH" id="dtq-hz-IIQ"/>
                         <outlet property="secondDownButton" destination="m0b-xB-6ge" id="S3c-P8-2Af"/>
                         <outlet property="secondOption" destination="hNa-Rl-cIb" id="wQY-Uv-Cv8"/>
                         <outlet property="secondUpButton" destination="Xk7-SH-Mtj" id="aXl-ze-ob3"/>
@@ -228,6 +240,10 @@
                         <outlet property="thirdUpButton" destination="bNr-NJ-RZ5" id="Uh1-tW-vVV"/>
                         <outlet property="timerLabel" destination="TLP-f3-Qa9" id="7fl-qq-Scq"/>
                         <outlet property="topDownButton" destination="JMj-vF-11V" id="vbd-m5-0XB"/>
+                        <outletCollection property="optionViews" destination="cLr-RR-esz" collectionClass="NSMutableArray" id="FKg-kc-iGK"/>
+                        <outletCollection property="optionViews" destination="pgK-8p-7yH" collectionClass="NSMutableArray" id="R0M-sR-tvb"/>
+                        <outletCollection property="optionViews" destination="SIx-eQ-ZtA" collectionClass="NSMutableArray" id="PxK-vj-HBf"/>
+                        <outletCollection property="optionViews" destination="xyH-7C-sS4" collectionClass="NSMutableArray" id="bN3-Sz-jYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

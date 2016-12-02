@@ -23,15 +23,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdDownButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var explainingLabel: UILabel!
+    @IBOutlet var optionViews: [UIView]!
     
     var timer: Timer = Timer()
     var time = 0
     var theresTime = true
     var round: Round!
+    var roundsPlayed = 0
+    var score = 0
+    var firstTimeNextRound = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        playAgainButton.imageView?.contentMode = .scaleAspectFit
         playAgainButton.isHidden = true
         timerLabel.text = String(60 - time)
         explainingLabel.text = "Sort the programming languages on founding date. Shake to confirm your answer!"
@@ -103,14 +109,32 @@ class ViewController: UIViewController {
     
     func roundEnd() {
         print("ROUND IS OVER!")
+        roundsPlayed += 1
         theresTime = false
         //Check score
         if round.correctOrder[0].event == firstOption.text && round.correctOrder[1].event == secondOption.text && round.correctOrder[2].event == thirdOption.text && round.correctOrder[3].event == fourthOption.text {
             print("Answer is correct! Whooo!")
+            score += 1
+            if roundsPlayed != 6 {
+                print("next_round_success")
+                playAgainButton.setImage(UIImage(named: "next_round_success") , for: .normal)
+            } else {
+                print("play_again")
+                playAgainButton.setImage(UIImage(named: "play_again") , for: .normal)
+            }
+            playAgainButton.isHidden = false
         } else {
             print("Answer is wrong! Awww!")
+            if roundsPlayed != 6 {
+                print("next_round_fail")
+                playAgainButton.setImage(UIImage(named: "next_round_fail") , for: .normal)
+            } else {
+                print("play_again")
+                playAgainButton.setImage(UIImage(named: "play_again") , for: .normal)
+            }
+            playAgainButton.isHidden = false
         }
-        
+        explainingLabel.text = "Click events to find out more!"
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
@@ -120,9 +144,34 @@ class ViewController: UIViewController {
             roundEnd()
         }
     }
+    @IBAction func nextButton(_ sender: Any) {
+        if playAgainButton.image(for: .normal) == UIImage(named: "play_again") {
+            for view in optionViews {
+                view.isHidden = true
+            }
+            scoreLabel.isHidden = false
+            if firstTimeNextRound {
+                scoreLabel.text = "Your score was: \(score) out of 6. \n Press the button again to play another round!"
+                firstTimeNextRound = false
+            } else {
+                round = setupRound()
+                startRound(round: round)
+            }
+        } else {
+            round = setupRound()
+            startRound(round: round)
+        }
+    }
     
     func startRound(round: Round) {
         theresTime = true
+        explainingLabel.text = "Sort the programming languages on founding date. Shake to confirm your answer!"
+        time = 0
+        playAgainButton.isHidden = true
+        for view in optionViews {
+            view.isHidden = false
+        }
+        scoreLabel.isHidden = true
         let options = [round.firstQ.event, round.secondQ.event, round.thirdQ.event, round.fourthQ.event]
         var used: [Int] = []
         var randomNumber = randomNumberGenerator(usedNumbers: used, max: options.count)
@@ -137,7 +186,6 @@ class ViewController: UIViewController {
         randomNumber = randomNumberGenerator(usedNumbers: used, max: options.count)
         used.append(randomNumber)
         fourthOption.text = options[randomNumber]
-        time = 0
         startTimer()
     }
 
