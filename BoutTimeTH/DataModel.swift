@@ -16,9 +16,8 @@ struct Round {
     var fourthQ: Event
     var correctOrder: [Event]{
         let tempEvents = [firstQ, secondQ, thirdQ, fourthQ]
-        print(tempEvents.sorted {$0.year > $1.year}
-        )
-        return tempEvents.sorted {$0.year > $1.year}
+//        print(tempEvents.sorted {$0.year > $1.year})
+        return tempEvents.sorted {$0.year < $1.year}
     }
 }
 
