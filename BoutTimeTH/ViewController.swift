@@ -163,6 +163,7 @@ class ViewController: UIViewController {
             } else {
                 score = 0
                 roundsPlayed = 0
+                usedEvents.removeAll()
                 round = setupRound()
                 startRound(round: round)
             }

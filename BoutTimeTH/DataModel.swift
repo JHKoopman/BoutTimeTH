@@ -45,6 +45,8 @@ func randomNumberGenerator(usedNumbers: [Int], max: Int) -> Int {
     return randomNumber
 }
 //MARK: Events
+var usedEvents: [String] = []
+
 let events: [Event] = [
                         Event(event: "Logo", year: 1968, url: "https://en.wikipedia.org/wiki/Logo_(programming_language)"),
                         Event(event: "B", year: 1969, url: "https://en.wikipedia.org/wiki/B_(programming_language)"),
@@ -116,13 +118,17 @@ func setupRound() -> Round {
         randomNumber = randomNumberGenerator(usedNumbers: usedNumbers, max: events.count)
         usedNumbers.append(randomNumber)
         let fourthEvent = events[randomNumber]
-        //Check if the events don't lie more that 10 years apart to not make it too difficult, also check if they didn't happen in the same year
-        if (fourthEvent.year.distance(to: thirdEvent.year) <= 10 && fourthEvent.year.distance(to: thirdEvent.year) != 0) && (thirdEvent.year.distance(to: secondEvent.year) <= 10 && thirdEvent.year.distance(to: secondEvent.year) != 0) && (secondEvent.year.distance(to: firstEvent.year) <= 10 && secondEvent.year.distance(to: firstEvent.year) != 0) {
-            EventsFit = true
-            round.firstQ = firstEvent
-            round.secondQ = secondEvent
-            round.thirdQ = thirdEvent
-            round.fourthQ = fourthEvent
+        //Check if the events don't lie more that 15 years apart to not make it too difficult, also check if they didn't happen in the same year
+        if (fourthEvent.year.distance(to: thirdEvent.year) <= 15 && fourthEvent.year.distance(to: thirdEvent.year) != 0) && (thirdEvent.year.distance(to: secondEvent.year) <= 15 && thirdEvent.year.distance(to: secondEvent.year) != 0) && (secondEvent.year.distance(to: firstEvent.year) <= 15 && secondEvent.year.distance(to: firstEvent.year) != 0) && usedEvents.contains(firstEvent.event) == false && usedEvents.contains(secondEvent.event) == false && usedEvents.contains(thirdEvent.event) == false && usedEvents.contains(fourthEvent.event) == false {
+                EventsFit = true
+                round.firstQ = firstEvent
+                round.secondQ = secondEvent
+                round.thirdQ = thirdEvent
+                round.fourthQ = fourthEvent
+                usedEvents.append(fourthEvent.event)
+                usedEvents.append(thirdEvent.event)
+                usedEvents.append(secondEvent.event)
+                usedEvents.append(firstEvent.event)
         } else {
             print("Not working!")
         }
