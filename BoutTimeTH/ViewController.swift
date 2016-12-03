@@ -161,6 +161,8 @@ class ViewController: UIViewController {
                 scoreLabel.text = "Your score was: \(score) out of 6. \n Press the button again to play another round!"
                 firstTimeNextRound = false
             } else {
+                score = 0
+                roundsPlayed = 0
                 round = setupRound()
                 startRound(round: round)
             }
