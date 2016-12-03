@@ -9,6 +9,7 @@
 import Foundation
 import GameKit
 
+//MARK: Struct declaration
 struct Round {
     var firstQ: Event
     var secondQ: Event
@@ -16,7 +17,6 @@ struct Round {
     var fourthQ: Event
     var correctOrder: [Event]{
         let tempEvents = [firstQ, secondQ, thirdQ, fourthQ]
-//        print(tempEvents.sorted {$0.year > $1.year})
         return tempEvents.sorted {$0.year < $1.year}
     }
 }
@@ -27,7 +27,7 @@ struct Event {
     let url: String
 }
 
-//Random number generator
+//MARK: Random number generator
 func numberGenerator(max: Int) -> Int {
     let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: max)
     return randomNumber
@@ -44,7 +44,7 @@ func randomNumberGenerator(usedNumbers: [Int], max: Int) -> Int {
     //Return a number that is not used before
     return randomNumber
 }
-
+//MARK: Events
 let events: [Event] = [
                         Event(event: "Logo", year: 1968, url: "https://en.wikipedia.org/wiki/Logo_(programming_language)"),
                         Event(event: "B", year: 1969, url: "https://en.wikipedia.org/wiki/B_(programming_language)"),
@@ -95,11 +95,14 @@ let events: [Event] = [
                         Event(event: "Swift", year: 2014, url: "https://en.wikipedia.org/wiki/Swift_(programming_language)")
                         ]
 
+//MARK: Setup of a round
 func setupRound() -> Round {
+    //Make a temporary round to which we'll add objects later
     var round: Round = Round(firstQ: events[0], secondQ: events[0], thirdQ: events[0], fourthQ: events[0])
     var EventsFit = false
     var usedNumbers: [Int] = []
     while EventsFit != true {
+        //Add random events to the round object
         usedNumbers.removeAll()
         var randomNumber = randomNumberGenerator(usedNumbers: usedNumbers, max: events.count)
         usedNumbers.append(randomNumber)
@@ -113,7 +116,7 @@ func setupRound() -> Round {
         randomNumber = randomNumberGenerator(usedNumbers: usedNumbers, max: events.count)
         usedNumbers.append(randomNumber)
         let fourthEvent = events[randomNumber]
-        
+        //Check if the events don't lie more that 10 years apart to not make it too difficult, also check if they didn't happen in the same year
         if (fourthEvent.year.distance(to: thirdEvent.year) <= 10 && fourthEvent.year.distance(to: thirdEvent.year) != 0) && (thirdEvent.year.distance(to: secondEvent.year) <= 10 && thirdEvent.year.distance(to: secondEvent.year) != 0) && (secondEvent.year.distance(to: firstEvent.year) <= 10 && secondEvent.year.distance(to: firstEvent.year) != 0) {
             EventsFit = true
             round.firstQ = firstEvent
@@ -125,4 +128,14 @@ func setupRound() -> Round {
         }
     }
     return round
+}
+
+//MARK: Sound data
+
+var gameSound: SystemSoundID = 0
+//Function to play a game sound
+func playSound(path: String) {
+    let soundURL = NSURL(fileURLWithPath: path)
+    AudioServicesCreateSystemSoundID(soundURL, &gameSound)
+    AudioServicesPlaySystemSound(gameSound)
 }

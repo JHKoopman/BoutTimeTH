@@ -14,6 +14,8 @@
 		08675D851DE743E600C3FE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08675D841DE743E600C3FE76 /* Assets.xcassets */; };
 		08675D881DE743E600C3FE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08675D861DE743E600C3FE76 /* LaunchScreen.storyboard */; };
 		08A78C311DF06F7E00FE4BB5 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A78C301DF06F7E00FE4BB5 /* DataModel.swift */; };
+		08C64EA61DF2BEBF00380E7B /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08C64EA41DF2BEBF00380E7B /* CorrectDing.wav */; };
+		08C64EA71DF2BEBF00380E7B /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08C64EA51DF2BEBF00380E7B /* IncorrectBuzz.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		08675D871DE743E600C3FE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08675D891DE743E600C3FE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08A78C301DF06F7E00FE4BB5 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		08C64EA41DF2BEBF00380E7B /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		08C64EA51DF2BEBF00380E7B /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				08675D841DE743E600C3FE76 /* Assets.xcassets */,
 				08675D861DE743E600C3FE76 /* LaunchScreen.storyboard */,
 				08675D891DE743E600C3FE76 /* Info.plist */,
+				08C64EA41DF2BEBF00380E7B /* CorrectDing.wav */,
+				08C64EA51DF2BEBF00380E7B /* IncorrectBuzz.wav */,
 			);
 			path = BoutTimeTH;
 			sourceTree = "<group>";
@@ -130,8 +136,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				08675D881DE743E600C3FE76 /* LaunchScreen.storyboard in Resources */,
+				08C64EA71DF2BEBF00380E7B /* IncorrectBuzz.wav in Resources */,
 				08675D851DE743E600C3FE76 /* Assets.xcassets in Resources */,
 				08675D831DE743E600C3FE76 /* Main.storyboard in Resources */,
+				08C64EA61DF2BEBF00380E7B /* CorrectDing.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
