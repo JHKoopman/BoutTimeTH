@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081DED071DF1B9CD00B4A631 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081DED061DF1B9CD00B4A631 /* WebViewController.swift */; };
 		08675D7E1DE743E600C3FE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08675D7D1DE743E600C3FE76 /* AppDelegate.swift */; };
 		08675D801DE743E600C3FE76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08675D7F1DE743E600C3FE76 /* ViewController.swift */; };
 		08675D831DE743E600C3FE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08675D811DE743E600C3FE76 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		081DED061DF1B9CD00B4A631 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		08675D7A1DE743E600C3FE76 /* BoutTimeTH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTimeTH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08675D7D1DE743E600C3FE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08675D7F1DE743E600C3FE76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				08675D7D1DE743E600C3FE76 /* AppDelegate.swift */,
 				08A78C301DF06F7E00FE4BB5 /* DataModel.swift */,
 				08675D7F1DE743E600C3FE76 /* ViewController.swift */,
+				081DED061DF1B9CD00B4A631 /* WebViewController.swift */,
 				08675D811DE743E600C3FE76 /* Main.storyboard */,
 				08675D841DE743E600C3FE76 /* Assets.xcassets */,
 				08675D861DE743E600C3FE76 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				08675D801DE743E600C3FE76 /* ViewController.swift in Sources */,
 				08675D7E1DE743E600C3FE76 /* AppDelegate.swift in Sources */,
 				08A78C311DF06F7E00FE4BB5 /* DataModel.swift in Sources */,
+				081DED071DF1B9CD00B4A631 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

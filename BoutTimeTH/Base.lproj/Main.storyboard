@@ -51,6 +51,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="m0b-xB-6ge" firstAttribute="height" secondItem="Xk7-SH-Mtj" secondAttribute="height" id="IGY-7E-4pQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Xk7-SH-Mtj" secondAttribute="trailing" id="IWP-PN-NkF"/>
@@ -62,6 +63,9 @@
                                     <constraint firstItem="hNa-Rl-cIb" firstAttribute="centerY" secondItem="pgK-8p-7yH" secondAttribute="centerY" id="reP-Pc-3OC"/>
                                     <constraint firstItem="m0b-xB-6ge" firstAttribute="top" secondItem="Xk7-SH-Mtj" secondAttribute="bottom" id="vIW-fC-QOJ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mbs-ls-sfh" appends="YES" id="Gcs-Ar-3r5"/>
+                                </connections>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIx-eQ-ZtA">
                                 <rect key="frame" x="25" y="300" width="325" height="100"/>
@@ -91,6 +95,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="90b-QY-LzV" firstAttribute="width" secondItem="bNr-NJ-RZ5" secondAttribute="width" id="18h-eP-15b"/>
                                     <constraint firstItem="heu-5d-4vc" firstAttribute="centerX" secondItem="SIx-eQ-ZtA" secondAttribute="centerX" id="F3M-MD-hl6"/>
@@ -102,6 +107,9 @@
                                     <constraint firstItem="90b-QY-LzV" firstAttribute="height" secondItem="bNr-NJ-RZ5" secondAttribute="height" id="r4J-fq-RjD"/>
                                     <constraint firstAttribute="bottom" secondItem="90b-QY-LzV" secondAttribute="bottom" id="ucr-uh-7rh"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5pX-2V-Syi" appends="YES" id="nI8-pl-CKW"/>
+                                </connections>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyH-7C-sS4">
                                 <rect key="frame" x="25" y="436" width="325" height="100"/>
@@ -124,6 +132,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="GPQ-pF-MLj" firstAttribute="centerY" secondItem="xyH-7C-sS4" secondAttribute="centerY" id="1Au-fW-Ucv"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="L4w-fT-Ebx"/>
@@ -132,6 +141,9 @@
                                     <constraint firstItem="GPQ-pF-MLj" firstAttribute="height" secondItem="xyH-7C-sS4" secondAttribute="height" id="ZtA-m7-KtS"/>
                                     <constraint firstAttribute="trailing" secondItem="GPQ-pF-MLj" secondAttribute="trailing" id="mcB-xg-Ogi"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="c1f-5x-fVP" appends="YES" id="YXb-2k-fng"/>
+                                </connections>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLr-RR-esz">
                                 <rect key="frame" x="25" y="28" width="325" height="100"/>
@@ -154,6 +166,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="CSc-IM-MkG" firstAttribute="centerY" secondItem="cLr-RR-esz" secondAttribute="centerY" id="3A9-MI-s3q"/>
                                     <constraint firstItem="JMj-vF-11V" firstAttribute="height" secondItem="cLr-RR-esz" secondAttribute="height" id="Kl7-O7-CA4"/>
@@ -161,6 +174,9 @@
                                     <constraint firstAttribute="trailing" secondItem="JMj-vF-11V" secondAttribute="trailing" id="fIC-qO-5gH"/>
                                     <constraint firstItem="JMj-vF-11V" firstAttribute="centerY" secondItem="cLr-RR-esz" secondAttribute="centerY" id="xAX-FI-yaZ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="el0-cQ-pgb" appends="YES" id="wFK-m8-1TG"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-go-RJ7">
                                 <rect key="frame" x="167.5" y="613" width="40" height="34"/>
@@ -229,14 +245,18 @@
                         <outlet property="bottomUpButton" destination="GPQ-pF-MLj" id="uin-cr-1Ex"/>
                         <outlet property="explainingLabel" destination="bv6-go-RJ7" id="Egt-UX-Kvn"/>
                         <outlet property="firstOption" destination="CSc-IM-MkG" id="Mgx-8w-4OO"/>
+                        <outlet property="firstTap" destination="el0-cQ-pgb" id="1Ub-sB-J3L"/>
                         <outlet property="fourthOption" destination="nqZ-6X-MKA" id="JfN-e3-r8Q"/>
+                        <outlet property="fourthTap" destination="c1f-5x-fVP" id="7bk-mJ-Qcm"/>
                         <outlet property="playAgainButton" destination="UwM-zJ-UJR" id="Dj5-0F-jss"/>
                         <outlet property="scoreLabel" destination="qey-8q-IcH" id="dtq-hz-IIQ"/>
                         <outlet property="secondDownButton" destination="m0b-xB-6ge" id="S3c-P8-2Af"/>
                         <outlet property="secondOption" destination="hNa-Rl-cIb" id="wQY-Uv-Cv8"/>
+                        <outlet property="secondTap" destination="mbs-ls-sfh" id="cQw-bm-1BA"/>
                         <outlet property="secondUpButton" destination="Xk7-SH-Mtj" id="aXl-ze-ob3"/>
                         <outlet property="thirdDownButton" destination="90b-QY-LzV" id="fCP-AF-GkL"/>
                         <outlet property="thirdOption" destination="heu-5d-4vc" id="rXs-Hk-2Ss"/>
+                        <outlet property="thirdTap" destination="5pX-2V-Syi" id="QCr-pK-hdf"/>
                         <outlet property="thirdUpButton" destination="bNr-NJ-RZ5" id="Uh1-tW-vVV"/>
                         <outlet property="timerLabel" destination="TLP-f3-Qa9" id="7fl-qq-Scq"/>
                         <outlet property="topDownButton" destination="JMj-vF-11V" id="vbd-m5-0XB"/>
@@ -244,18 +264,106 @@
                         <outletCollection property="optionViews" destination="pgK-8p-7yH" collectionClass="NSMutableArray" id="R0M-sR-tvb"/>
                         <outletCollection property="optionViews" destination="SIx-eQ-ZtA" collectionClass="NSMutableArray" id="PxK-vj-HBf"/>
                         <outletCollection property="optionViews" destination="xyH-7C-sS4" collectionClass="NSMutableArray" id="bN3-Sz-jYA"/>
+                        <segue destination="5MK-qy-GzO" kind="presentation" identifier="showWebVC" id="gca-Ac-Uey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="el0-cQ-pgb" userLabel="FirstTap">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="5kl-Qz-gw4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mbs-ls-sfh" userLabel="SecondTap">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="Dyu-VL-1JX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5pX-2V-Syi" userLabel="ThirdTap">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="PBd-o9-mcz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="c1f-5x-fVP" userLabel="FourthTap">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="swG-0h-Da4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="xHO-9h-gEH">
+            <objects>
+                <viewController id="5MK-qy-GzO" customClass="WebViewController" customModule="BoutTimeTH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LjA-Wh-F0v"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jS-py-ct8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L1d-12-KoW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b64-lc-QvB">
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webview_bar" translatesAutoresizingMaskIntoConstraints="NO" id="kIy-zV-VCj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="ceI-r1-fle"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2z-zl-wx7">
+                                <rect key="frame" x="164" y="37" width="47" height="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-Bi-op3">
+                                <rect key="frame" x="329" y="20" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="JfX-Yd-PpU"/>
+                                    <constraint firstAttribute="width" constant="47" id="gBc-UD-pDB"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="5MK-qy-GzO" eventType="touchUpInside" id="0y9-eu-bjh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="b64-lc-QvB" secondAttribute="trailing" id="5wP-Jm-qKE"/>
+                            <constraint firstAttribute="trailing" secondItem="kIy-zV-VCj" secondAttribute="trailing" id="8R5-eX-fvm"/>
+                            <constraint firstItem="i2z-zl-wx7" firstAttribute="centerX" secondItem="L1d-12-KoW" secondAttribute="centerX" id="Lmg-sy-Mvk"/>
+                            <constraint firstItem="7jS-py-ct8" firstAttribute="top" secondItem="b64-lc-QvB" secondAttribute="bottom" id="Td5-jP-tx1"/>
+                            <constraint firstItem="b64-lc-QvB" firstAttribute="leading" secondItem="L1d-12-KoW" secondAttribute="leading" id="YVA-79-LPs"/>
+                            <constraint firstItem="1y7-Bi-op3" firstAttribute="top" secondItem="LjA-Wh-F0v" secondAttribute="bottom" id="aaX-WO-266"/>
+                            <constraint firstItem="b64-lc-QvB" firstAttribute="top" secondItem="kIy-zV-VCj" secondAttribute="bottom" id="lRe-QF-1ps"/>
+                            <constraint firstAttribute="trailing" secondItem="1y7-Bi-op3" secondAttribute="trailing" constant="-1" id="no6-Uo-aqJ"/>
+                            <constraint firstItem="i2z-zl-wx7" firstAttribute="top" secondItem="kIy-zV-VCj" secondAttribute="bottom" constant="-30" id="oO2-cT-S7V"/>
+                            <constraint firstItem="kIy-zV-VCj" firstAttribute="top" secondItem="LjA-Wh-F0v" secondAttribute="bottom" id="pIm-T2-u4x"/>
+                            <constraint firstItem="kIy-zV-VCj" firstAttribute="leading" secondItem="L1d-12-KoW" secondAttribute="leading" id="zgQ-Si-1Q0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="1y7-Bi-op3" id="VaO-yu-qqy"/>
+                        <outlet property="titleLabel" destination="i2z-zl-wx7" id="7Qk-kK-fq4"/>
+                        <outlet property="webView" destination="b64-lc-QvB" id="zc9-Jc-Znd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2X-do-J55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="122.78860569715144"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="167" height="167"/>
         <image name="down_full" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
         <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
+        <image name="webview_bar" width="1333" height="167"/>
     </resources>
 </document>

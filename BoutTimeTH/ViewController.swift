@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var explainingLabel: UILabel!
     @IBOutlet var optionViews: [UIView]!
+    @IBOutlet var firstTap: UITapGestureRecognizer!
+    @IBOutlet var secondTap: UITapGestureRecognizer!
+    @IBOutlet var thirdTap: UITapGestureRecognizer!
+    @IBOutlet var fourthTap: UITapGestureRecognizer!
     
     var timer: Timer = Timer()
     var time = 0
@@ -111,6 +115,10 @@ class ViewController: UIViewController {
         print("ROUND IS OVER!")
         roundsPlayed += 1
         theresTime = false
+        firstTap.isEnabled = true
+        secondTap.isEnabled = true
+        thirdTap.isEnabled = true
+        fourthTap.isEnabled = true
         //Check score
         if round.correctOrder[0].event == firstOption.text && round.correctOrder[1].event == secondOption.text && round.correctOrder[2].event == thirdOption.text && round.correctOrder[3].event == fourthOption.text {
             print("Answer is correct! Whooo!")
@@ -162,8 +170,70 @@ class ViewController: UIViewController {
             startRound(round: round)
         }
     }
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+        switch sender {
+        case firstTap:
+            print("First tap!")
+            var url: String{
+                var returnable: String = ""
+                for event in events{
+                    if event.event == firstOption.text {
+                        returnable = event.url
+                    }
+                }
+                return returnable
+            }
+            let sendingData = ["url":url, "title":firstOption.text]
+            performSegue(withIdentifier: "showWebVC", sender: sendingData)
+        case secondTap:
+            print("Second tap!")
+            var url: String{
+                var returnable: String = ""
+                for event in events{
+                    if event.event == secondOption.text {
+                        returnable = event.url
+                    }
+                }
+                return returnable
+            }
+            let sendingData = ["url":url, "title":secondOption.text]
+            performSegue(withIdentifier: "showWebVC", sender: sendingData)
+        case thirdTap:
+            print("Third tap!")
+            var url: String{
+                var returnable: String = ""
+                for event in events{
+                    if event.event == thirdOption.text {
+                        returnable = event.url
+                    }
+                }
+                return returnable
+            }
+            let sendingData = ["url":url, "title":thirdOption.text]
+            performSegue(withIdentifier: "showWebVC", sender: sendingData)
+        case fourthTap:
+            print("Fourth tap!")
+            var url: String{
+                var returnable: String = ""
+                for event in events{
+                    if event.event == fourthOption.text {
+                        returnable = event.url
+                    }
+                }
+                return returnable
+            }
+            let sendingData = ["url":url, "title":fourthOption.text]
+            performSegue(withIdentifier: "showWebVC", sender: sendingData)
+        default:
+            print("Something went wrong! Oops!")
+        }
+    }
     
     func startRound(round: Round) {
+        firstTap.isEnabled = false
+        secondTap.isEnabled = false
+        thirdTap.isEnabled = false
+        fourthTap.isEnabled = false
         theresTime = true
         explainingLabel.text = "Sort the programming languages on founding date. Shake to confirm your answer!"
         time = 0
@@ -187,6 +257,16 @@ class ViewController: UIViewController {
         used.append(randomNumber)
         fourthOption.text = options[randomNumber]
         startTimer()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebVC" {
+            let data = sender as! [String: String]
+            let detailVC = segue.destination as! WebViewController
+            detailVC.objectTitle = data["title"]
+            detailVC.url = data["url"]
+        }
     }
 
 }
