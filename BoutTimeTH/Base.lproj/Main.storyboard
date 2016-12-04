@@ -323,8 +323,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-Bi-op3">
                                 <rect key="frame" x="329" y="20" width="47" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="JfX-Yd-PpU"/>
-                                    <constraint firstAttribute="width" constant="47" id="gBc-UD-pDB"/>
+                                    <constraint firstAttribute="width" secondItem="1y7-Bi-op3" secondAttribute="height" multiplier="1:1" id="Vyx-hn-SbJ"/>
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
@@ -340,6 +339,7 @@
                             <constraint firstItem="7jS-py-ct8" firstAttribute="top" secondItem="b64-lc-QvB" secondAttribute="bottom" id="Td5-jP-tx1"/>
                             <constraint firstItem="b64-lc-QvB" firstAttribute="leading" secondItem="L1d-12-KoW" secondAttribute="leading" id="YVA-79-LPs"/>
                             <constraint firstItem="1y7-Bi-op3" firstAttribute="top" secondItem="LjA-Wh-F0v" secondAttribute="bottom" id="aaX-WO-266"/>
+                            <constraint firstItem="1y7-Bi-op3" firstAttribute="height" secondItem="kIy-zV-VCj" secondAttribute="height" id="atv-sQ-THt"/>
                             <constraint firstItem="b64-lc-QvB" firstAttribute="top" secondItem="kIy-zV-VCj" secondAttribute="bottom" id="lRe-QF-1ps"/>
                             <constraint firstAttribute="trailing" secondItem="1y7-Bi-op3" secondAttribute="trailing" constant="-1" id="no6-Uo-aqJ"/>
                             <constraint firstItem="i2z-zl-wx7" firstAttribute="top" secondItem="kIy-zV-VCj" secondAttribute="bottom" constant="-30" id="oO2-cT-S7V"/>
