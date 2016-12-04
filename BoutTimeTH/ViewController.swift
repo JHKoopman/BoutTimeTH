@@ -240,6 +240,7 @@ class ViewController: UIViewController {
         firstTimeNextRound = true
         explainingLabel.text = "Sort the programming languages on founding date. Shake to confirm your answer!"
         time = 0
+        timerLabel.text = String(60 - time)
         playAgainButton.isHidden = true
         for view in optionViews {
             view.isHidden = false
